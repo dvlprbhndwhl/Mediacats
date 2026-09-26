@@ -5,14 +5,17 @@ import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
 import { Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
-import heroCat from '@assets/photo_1_2026-09-27_01-05-48_1790464062041.jpg';
-import logoWordmark from '@assets/photo_2_2026-09-27_01-05-48_1790464062052.jpg';
-import catEarMark from '@assets/photo_3_2026-09-27_01-05-48_1790464062053.jpg';
 
 const queryClient = new QueryClient();
 
 function CatMark() {
-  return <img className="brand-mark" src={catEarMark} alt="" aria-hidden="true" />;
+  return (
+    <svg className="brand-mark" viewBox="0 0 32 27" aria-hidden="true">
+      <path d="M3 23V5l8 7L16 3l5 9 8-7v18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="bevel" />
+      <path d="M10 19h12" stroke="currentColor" strokeWidth="2.5" />
+      <path d="M4 6 3 3m25 3 1-3" stroke="currentColor" strokeWidth="1" opacity=".7" />
+    </svg>
+  );
 }
 
 function CatIllustration({ variant = 'hero', className = '' }: { variant?: 'hero' | 'hunt' | 'small'; className?: string }) {
@@ -47,25 +50,41 @@ function CatIllustration({ variant = 'hero', className = '' }: { variant?: 'hero
     );
   }
   return (
-    <svg className={className} viewBox="0 0 520 490" role="img" aria-label="Ink sketch of a cat stalking a search result">
+    <svg className={className} viewBox="0 0 620 500" role="img" aria-label="Ink sketch of a cat hunting a number one organic search result from a laptop">
       <g fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M76 399c9-77 66-126 142-112l-4-111 52 44 62-45 5 119c56 32 75 78 60 132" />
-        <path d="M130 312c17-21 39-21 57 0m28 0c17-21 40-20 57 0" />
-        <path d="M157 352c24 18 53 18 79-1" />
-        <path d="M174 270h3m54 0h3" />
-        <path d="m140 230-26-50 58 30m80 0 49-45-17 63" />
-        <path d="M104 393c-42-13-71 11-58 37 14 29 80 12 99-18" />
-        <path d="M289 398c36-25 71-18 98 10 36 37 84 10 81-28" />
-        <path d="M369 115h95v128h-95z" stroke="#B8FF00" />
-        <path d="M388 151h58M388 174h42M388 198h50" stroke="#B8FF00" />
-        <path d="m399 157 11 9 13-22 13 13 12-25" stroke="#B8FF00" />
-        <path d="M378 92h35M426 92h30" stroke="#B8FF00" />
-        <path d="M394 95v-22l12 12 13-18 4 27" stroke="#B8FF00" />
-        <path d="M365 255c28 4 61 4 91 0" stroke="#B8FF00" />
+        <path d="M52 417h506" opacity=".45" />
+        <path d="M103 388c17-77 78-119 153-101l-7-112 52 43 63-45 6 117c51 29 74 70 61 124" />
+        <path d="M150 300c17-21 39-21 57 0m31 0c18-21 41-20 59 0" />
+        <path d="M180 342c24 18 53 18 79-1" />
+        <path d="M197 258h3m55 0h3" />
+        <path d="m160 221-26-50 58 30m81 0 49-45-17 63" />
+        <path d="M127 382c-42-13-72 11-58 37 14 29 80 12 99-18" />
+        <path d="M311 391c37-25 74-17 101 10 36 36 83 10 80-29" />
+        <path d="M329 392c24 11 45 12 69 0" stroke="#B8FF00" opacity=".8" />
+        <path d="M391 286h157l37 100H353z" />
+        <path d="M414 299h128v68H389z" />
+        <path d="M414 299h128v68H389z" stroke="#B8FF00" opacity=".75" />
+        <path d="M411 333h75m-75 16h48m24-12 10 8 12-20 12 12 11-23" stroke="#B8FF00" />
+        <path d="M374 386h184" />
+        <path d="M417 411h97" />
+        <path d="M423 422h83m-68 10h52" opacity=".6" />
+        <path d="M444 270h75" stroke="#B8FF00" />
+        <path d="M451 270v-27l14 14 16-23 5 36" stroke="#B8FF00" />
       </g>
-      <text x="383" y="140" fill="#B8FF00" fontFamily="Arial Black, sans-serif" fontSize="28">#1</text>
-      <text x="28" y="459" fill="currentColor" fontFamily="Space Mono, monospace" fontSize="11">STALK / SCAN / STRIKE</text>
+      <path d="M411 318h52" stroke="#B8FF00" strokeWidth="2" />
+      <text x="420" y="329" fill="#B8FF00" fontFamily="Arial Black, sans-serif" fontSize="27">#1</text>
+      <text x="400" y="291" fill="currentColor" fontFamily="Space Mono, monospace" fontSize="9">iGAMING / ORGANIC TRAFFIC</text>
+      <text x="65" y="463" fill="currentColor" fontFamily="Space Mono, monospace" fontSize="11">STALK / SCAN / STRIKE</text>
     </svg>
+  );
+}
+
+function WordmarkLogo() {
+  return (
+    <span className="wordmark-logo" aria-label="MEDIACATS">
+      <CatMark />
+      <span>MEDIACATS</span>
+    </span>
   );
 }
 
@@ -82,7 +101,7 @@ function SiteHeader({ menuOpen, onToggle }: { menuOpen: boolean; onToggle: () =>
     <header className="site-header">
       <div className="container header-inner">
         <a className="brand" href="#top" data-testid="link-brand" onClick={close}>
-          <img className="brand-wordmark" src={logoWordmark} alt="MEDIACATS" />
+          <WordmarkLogo />
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">
           <a className="nav-link" href="#what-we-do" data-testid="link-nav-what">WHAT WE DO</a>
@@ -168,7 +187,7 @@ function Home() {
               <a className="hero-cta" href="#contact" data-testid="link-hero-cta">LET&apos;S TALK <span>→</span></a>
             </div>
             <div className="hero-art reveal">
-              <img className="hero-photo" src={heroCat} alt="Hand-drawn black cat hunting organic traffic beside a laptop" />
+              <CatIllustration variant="hero" className="cat-hero" />
             </div>
           </div>
           <div className="scroll-note mono">
@@ -271,7 +290,7 @@ function Home() {
               <blockquote className="quote">Curious enough to find the opportunity.<br />Patient enough to wait for it.<br /><span className="acid">Fast enough to catch it.</span></blockquote>
             </div>
             <div className="about-art reveal">
-              <img src={catEarMark} alt="" aria-hidden="true" />
+              <div className="about-mark"><CatMark /></div>
               <span className="mono">CURIOUS / PATIENT / FAST</span>
             </div>
           </div>
