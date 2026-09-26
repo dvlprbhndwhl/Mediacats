@@ -5,7 +5,6 @@ import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
 import { Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
-import heroCatArtwork from '@assets/generated_images/mediacats-cat-study.png';
 
 const queryClient = new QueryClient();
 
@@ -179,7 +178,7 @@ function Home() {
               <a className="hero-cta" href="#contact" data-testid="link-hero-cta">LET&apos;S TALK <span>→</span></a>
             </div>
             <div className="hero-art reveal">
-              <img className="cat-hero" src={heroCatArtwork} alt="Hand-drawn black cat stalking a laptop with sharp green eyes" />
+              <CatIllustration variant="hero" className="cat-hero" />
             </div>
           </div>
           <div className="scroll-note mono">
