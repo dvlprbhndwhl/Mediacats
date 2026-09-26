@@ -5,6 +5,9 @@ import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
 import { Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
+import heroCatArtwork from '@assets/photo_1_2026-09-27_01-05-48_1790464062041.jpg';
+import wordmarkArtwork from '@assets/photo_2_2026-09-27_01-05-48_1790464062052.jpg';
+import catMarkArtwork from '@assets/photo_3_2026-09-27_01-05-48_1790464062053.jpg';
 
 const queryClient = new QueryClient();
 
@@ -81,9 +84,8 @@ function CatIllustration({ variant = 'hero', className = '' }: { variant?: 'hero
 
 function WordmarkLogo() {
   return (
-    <span className="wordmark-logo" aria-label="MEDIACATS">
-      <CatMark />
-      <span>MEDIACATS</span>
+    <span className="wordmark-logo">
+      <img src={wordmarkArtwork} alt="MEDIACATS" />
     </span>
   );
 }
@@ -187,7 +189,14 @@ function Home() {
               <a className="hero-cta" href="#contact" data-testid="link-hero-cta">LET&apos;S TALK <span>→</span></a>
             </div>
             <div className="hero-art reveal">
-              <CatIllustration variant="hero" className="cat-hero" />
+              <div className="hero-visual">
+                <div className="hero-visual-index mono">HUNT / 001</div>
+                <img className="hero-photo" src={heroCatArtwork} alt="Hand-drawn black cat watching a laptop and a number one organic result" />
+                <div className="hero-visual-caption mono">
+                  <span>CAT / LAPTOP / SERP</span>
+                  <span>QUALITY OVER NOISE</span>
+                </div>
+              </div>
             </div>
           </div>
           <div className="scroll-note mono">
@@ -290,7 +299,9 @@ function Home() {
               <blockquote className="quote">Curious enough to find the opportunity.<br />Patient enough to wait for it.<br /><span className="acid">Fast enough to catch it.</span></blockquote>
             </div>
             <div className="about-art reveal">
-              <div className="about-mark"><CatMark /></div>
+              <div className="about-mark">
+                <img src={catMarkArtwork} alt="Hand-drawn MEDIACATS cat-ear M symbol" />
+              </div>
               <span className="mono">CURIOUS / PATIENT / FAST</span>
             </div>
           </div>
