@@ -5,16 +5,14 @@ import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
 import { Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
+import heroCat from '@assets/photo_1_2026-09-27_01-05-48_1790464062041.jpg';
+import logoWordmark from '@assets/photo_2_2026-09-27_01-05-48_1790464062052.jpg';
+import catEarMark from '@assets/photo_3_2026-09-27_01-05-48_1790464062053.jpg';
 
 const queryClient = new QueryClient();
 
 function CatMark() {
-  return (
-    <svg className="brand-mark" viewBox="0 0 32 27" aria-hidden="true">
-      <path d="M3 23V5l8 7L16 3l5 9 8-7v18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="bevel" />
-      <path d="M10 19h12" stroke="currentColor" strokeWidth="2.5" />
-    </svg>
-  );
+  return <img className="brand-mark" src={catEarMark} alt="" aria-hidden="true" />;
 }
 
 function CatIllustration({ variant = 'hero', className = '' }: { variant?: 'hero' | 'hunt' | 'small'; className?: string }) {
@@ -84,13 +82,11 @@ function SiteHeader({ menuOpen, onToggle }: { menuOpen: boolean; onToggle: () =>
     <header className="site-header">
       <div className="container header-inner">
         <a className="brand" href="#top" data-testid="link-brand" onClick={close}>
-          <CatMark />
-          <span>MEDIACATS</span>
+          <img className="brand-wordmark" src={logoWordmark} alt="MEDIACATS" />
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">
           <a className="nav-link" href="#what-we-do" data-testid="link-nav-what">WHAT WE DO</a>
           <a className="nav-link" href="#markets" data-testid="link-nav-markets">MARKETS</a>
-          <a className="nav-link" href="#results" data-testid="link-nav-results">RESULTS</a>
           <a className="nav-link" href="#about" data-testid="link-nav-about">ABOUT</a>
           <a className="nav-link" href="#contact" data-testid="link-nav-contact">CONTACT</a>
         </nav>
@@ -101,7 +97,6 @@ function SiteHeader({ menuOpen, onToggle }: { menuOpen: boolean; onToggle: () =>
       <nav id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation" hidden={!menuOpen}>
         <a className="nav-link" href="#what-we-do" onClick={close} data-testid="link-mobile-what">WHAT WE DO</a>
         <a className="nav-link" href="#markets" onClick={close} data-testid="link-mobile-markets">MARKETS</a>
-        <a className="nav-link" href="#results" onClick={close} data-testid="link-mobile-results">RESULTS</a>
         <a className="nav-link" href="#about" onClick={close} data-testid="link-mobile-about">ABOUT</a>
         <a className="nav-link" href="#contact" onClick={close} data-testid="link-mobile-contact">CONTACT</a>
       </nav>
@@ -173,7 +168,7 @@ function Home() {
               <a className="hero-cta" href="#contact" data-testid="link-hero-cta">LET&apos;S TALK <span>→</span></a>
             </div>
             <div className="hero-art reveal">
-              <CatIllustration variant="hero" className="cat-hero" />
+              <img className="hero-photo" src={heroCat} alt="Hand-drawn black cat hunting organic traffic beside a laptop" />
             </div>
           </div>
           <div className="scroll-note mono">
@@ -193,21 +188,21 @@ function Home() {
             <h2 id="what-title" className="display">WHAT<br /><span className="acid">WE DO.</span></h2>
             <div className="section-heading-copy">
               <p>We turn search intent into a repeatable acquisition channel. No vanity traffic. No generic playbooks. Just the right people, in the right market, at the right moment.</p>
-              <span className="mono">THE MEDIACATS DNA / 06 SIGNALS</span>
+              <span className="mono">THE MEDIACATS DNA / 05 SIGNALS</span>
             </div>
           </div>
           <div className="facts-grid reveal">
             {[
-              ['MARKETS', 'Tier-1 + Tier-2'],
-              ['PAYOUT', 'Commercial intent'],
-              ['TRAFFIC', 'Organic / compounding'],
-              ['VERTICAL', 'iGaming'],
-              ['APPROACH', 'Data × instinct'],
-              ['FOCUS', 'Long game / sharp moves'],
-            ].map(([label, value], index) => (
+              ['MARKETS', 'Tier-1 → Tier-2', 'We focus on markets where organic traffic has real commercial value.'],
+              ['PAYOUT', 'Hybrid', 'We believe in the quality of traffic and price it accordingly.'],
+              ['VERTICAL', 'iGaming', 'SEO built around one of the most competitive search environments on the web.'],
+              ['APPROACH', 'Hunt → Test → Scale', 'Find the opening, prove the signal, then compound what works.'],
+              ['FOCUS', 'Long game', 'We prioritize durable search opportunities over quick spikes.'],
+            ].map(([label, value, note], index) => (
               <div className="fact" key={label} data-testid={`fact-${index}`}>
                 <div className="fact-label mono">{label}</div>
                 <div className="fact-value">{value}</div>
+                <p className="fact-note">{note}</p>
               </div>
             ))}
           </div>
@@ -236,10 +231,6 @@ function Home() {
                 ))}
               </div>
             </div>
-            <div className="section-heading-copy" style={{ marginTop: 65 }}>
-              <span className="mono">CAPABILITIES</span>
-              <p style={{ marginTop: 15 }}>Technical SEO / Content systems / Digital PR / Link acquisition / Market intelligence / CRO for organic</p>
-            </div>
           </div>
         </section>
 
@@ -258,7 +249,7 @@ function Home() {
               ['03', 'CANADA', 'TIER-1'],
               ['04', 'AUSTRALIA', 'TIER-1'],
               ['05', 'NORDICS', 'TIER-1'],
-              ['06', 'LATAM + MORE', 'TIER-2'],
+              ['06', 'AND MORE', 'TIER-2+'],
             ].map(([code, name, type]) => (
               <div className="market-row" key={code} data-testid={`market-row-${code}`}>
                 <span className="market-code mono">{code}</span>
@@ -271,37 +262,6 @@ function Home() {
           <p className="market-note mono">MARKET LIST IS ALWAYS OPEN / ASK US ABOUT YOURS</p>
         </section>
 
-        <section id="results" className="results-section section-pad" aria-labelledby="results-title">
-          <div className="container">
-            <div className="results-top reveal">
-              <div>
-                <div className="eyebrow mono">THE RECEIPTS</div>
-                <h2 id="results-title" className="display">RESULTS<br /><span className="acid">PENDING.</span></h2>
-              </div>
-              <p>We&apos;re not here to publish made-up numbers. This space is reserved for the work we&apos;re proud to put our name on.</p>
-            </div>
-            <div className="placeholder-metrics reveal" aria-label="Results metrics pending">
-              <div className="metric"><span className="metric-label mono">ORGANIC SESSIONS</span><div className="metric-value acid">TBD</div><small>Real data coming after the first hunt.</small></div>
-              <div className="metric"><span className="metric-label mono">COMMERCIAL KEYWORDS</span><div className="metric-value acid">TBD</div><small>No inflated reach. Only search terms that can pay their rent.</small></div>
-              <div className="metric"><span className="metric-label mono">MARKETS LIVE</span><div className="metric-value acid">TBD</div><small>We&apos;ll show the map when it&apos;s ours.</small></div>
-            </div>
-            <div className="case-studies reveal">
-              <article className="case-card featured">
-                <span className="case-index mono">CASE FILE / 001</span>
-                <h3>YOUR BRAND<br />COULD GO<br />HERE.</h3>
-                <p>Editorial case study slot. The only placeholder we&apos;re willing to defend.</p>
-                <span className="case-corner mono">COMING SOON ↗</span>
-              </article>
-              <article className="case-card">
-                <span className="case-index mono">CASE FILE / 002</span>
-                <h3>NO FICTION.<br />JUST<br />FINDINGS.</h3>
-                <CatIllustration variant="small" className="cat-small" />
-                <span className="case-corner mono">REDACTED ↗</span>
-              </article>
-            </div>
-          </div>
-        </section>
-
         <section id="about" className="section-pad container section-rule" aria-labelledby="about-title">
           <div className="about-grid">
             <div className="about-copy reveal">
@@ -310,20 +270,9 @@ function Home() {
               <p>Because the best organic acquisition teams behave less like agencies and more like predators. They move quietly. They learn the territory. They don&apos;t waste energy chasing everything.</p>
               <blockquote className="quote">Curious enough to find the opportunity.<br />Patient enough to wait for it.<br /><span className="acid">Fast enough to catch it.</span></blockquote>
             </div>
-            <div className="team-panel reveal">
-              <div className="mono muted" style={{ padding: '20px 0' }}>THE DEN / TEAM PLACEHOLDERS</div>
-              {[
-                ['MC', 'THE STRATEGIST', 'SEARCH'],
-                ['??', 'THE OPERATOR', 'GROWTH'],
-                ['??', 'THE STORYTELLER', 'EDITORIAL'],
-                ['??', 'THE SCOUT', 'MARKETS'],
-              ].map(([initials, name, role]) => (
-                <div className="team-item" key={name}>
-                  <span className="team-avatar">{initials}</span>
-                  <div><div className="team-name">{name}</div><div className="team-role">{role}</div></div>
-                  <span className="team-status mono">ON HUNT</span>
-                </div>
-              ))}
+            <div className="about-art reveal">
+              <img src={catEarMark} alt="" aria-hidden="true" />
+              <span className="mono">CURIOUS / PATIENT / FAST</span>
             </div>
           </div>
         </section>
@@ -337,11 +286,12 @@ function Home() {
             <form className="contact-form reveal" onSubmit={handleSubmit}>
               <div className="field"><label htmlFor="name">YOUR NAME</label><input id="name" name="name" required placeholder="Name" data-testid="input-contact-name" /></div>
               <div className="field"><label htmlFor="email">YOUR EMAIL</label><input id="email" type="email" name="email" required placeholder="you@brand.com" data-testid="input-contact-email" /></div>
+              <div className="field field-note"><label htmlFor="note">YOUR NOTE</label><textarea id="note" name="note" rows={4} placeholder="Tell us what you&apos;re hunting." data-testid="input-contact-note" /></div>
               <button className="submit-button" type="submit" data-testid="button-contact-submit">START A CONVERSATION →</button>
               {sent && <p className="form-success" role="status" data-testid="status-contact-success">Message received. We&apos;ll come find you.</p>}
             </form>
             <footer className="contact-footer mono">
-              <span>MEDIACATS / ORGANIC ACQUISITION UNIT / 2025</span>
+              <span className="footer-brand"><CatMark /> <span>MEDIACATS / ORGANIC ACQUISITION UNIT / 2025</span></span>
               <div className="footer-links"><a href="mailto:hello@mediacats.com" data-testid="link-email">EMAIL</a><a href="#top" data-testid="link-back-top">BACK TO TOP ↑</a></div>
             </footer>
           </div>
