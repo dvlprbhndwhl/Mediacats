@@ -20,53 +20,52 @@ function CatMark() {
 function CatIllustration({ variant = 'hero', className = '' }: { variant?: 'hero' | 'hunt' | 'small'; className?: string }) {
   if (variant === 'hunt') {
     return (
-      <svg className={className} viewBox="0 0 420 280" role="img" aria-label="Ink sketch of a cat watching a ranking graph">
+      <svg className={className} viewBox="0 0 420 280" role="img" aria-label="Angular ink sketch of a cat reading a ranking graph">
         <g fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
           <path d="M37 216h345M52 216V44" opacity=".4" />
           <path d="M62 185c34-7 48-27 73-24 30 4 34-41 69-37 29 3 30-52 67-48 26 2 37-25 75-35" stroke="#080808" />
-          <path d="M250 220c-4-34 1-59 17-77l-8-42 25 18 23-20 4 46c16 12 29 38 21 75" />
-          <path d="M269 127c9-12 28-12 39 0M276 141h2m20 0h2M280 149c7 5 14 5 21 0" />
-          <path d="M288 102l-3-21 16 13 13-18 5 26" />
-          <path d="M299 220c15-12 30-13 46-1 19 13 36 2 39-10" />
-          <circle cx="335" cy="63" r="20" />
-          <path d="M321 48l-13-14 20 6m18 1 16-9-8 18M328 63h-1m15 0h-1" />
+          <path d="M244 220l15-69-10-59 31 25 35-28 8 61 25 70" />
+          <path d="M259 151l25-17 31 17-12 49-39 0z" />
+          <path d="M267 157l18-6 19 6m-34 11 8-1m14 0 8-1M280 181l19-4" stroke="#080808" />
+          <path d="M267 151l-11-34m47 33 19-37" />
+          <path d="M259 220c-5-16-16-21-30-13m85 13c10-14 24-15 38-4 15 12 31 4 36-7" />
+          <path d="M310 63h67v75h-67z" stroke="#080808" />
+          <path d="M322 85h42m-42 17h29m-29 17h36m-33-31 8 7 9-14 9 9 8-17" stroke="#080808" />
         </g>
-        <text x="300" y="70" fill="#080808" fontFamily="Space Mono, monospace" fontSize="10">DATA?</text>
+        <path d="M320 60h53l-9-19-12 13-11-20-9 22z" fill="none" stroke="#080808" strokeWidth="3" />
+        <text x="321" y="80" fill="#080808" fontFamily="Arial Black, sans-serif" fontSize="13">#1</text>
       </svg>
     );
   }
   if (variant === 'small') {
     return (
-      <svg className={className} viewBox="0 0 230 190" role="img" aria-label="Sharp ink sketch of a cat">
+      <svg className={className} viewBox="0 0 230 190" role="img" aria-label="Angular ink sketch of a cat">
         <g fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M36 147c7-33 34-55 69-51l-3-49 25 22 30-25 1 52c25 17 27 45 14 62" />
-          <path d="M65 111c9-10 20-10 29 0m14 0c9-10 20-10 29 0M82 130c12 9 24 9 37 0" />
-          <path d="M93 94h2m26 0h2M80 68 70 49l25 11m26 0 20-17-7 24" />
-          <path d="M46 145c-28-8-39 12-31 24 10 16 47 3 54-11" />
-          <path d="M161 159h39M18 169h34" />
+          <path d="M39 153 55 91 51 35l39 31 46-28 28 32-5 77" />
+          <path d="M65 105 93 94l21 10-21 12zM120 104l21-10 27 11-22 11z" fill="#B8FF00" stroke="#B8FF00" />
+          <path d="M98 124h24m-54 28c-20-10-34-2-42 12m123-14 31 0M53 36l-16-19m99 21 20-20" />
         </g>
       </svg>
     );
   }
   return (
-    <svg className={className} viewBox="0 0 520 490" role="img" aria-label="Ink sketch of a cat stalking a search result">
+    <svg className={className} viewBox="0 0 620 500" role="img" aria-label="Angular ink sketch of a cat stalking a number one organic search result">
       <g fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M76 399c9-77 66-126 142-112l-4-111 52 44 62-45 5 119c56 32 75 78 60 132" />
-        <path d="M130 312c17-21 39-21 57 0m28 0c17-21 40-20 57 0" />
-        <path d="M157 352c24 18 53 18 79-1" />
-        <path d="M174 270h3m54 0h3" />
-        <path d="m140 230-26-50 58 30m80 0 49-45-17 63" />
-        <path d="M104 393c-42-13-71 11-58 37 14 29 80 12 99-18" />
-        <path d="M289 398c36-25 71-18 98 10 36 37 84 10 81-28" />
-        <path d="M369 115h95v128h-95z" stroke="#B8FF00" />
-        <path d="M388 151h58M388 174h42M388 198h50" stroke="#B8FF00" />
-        <path d="m399 157 11 9 13-22 13 13 12-25" stroke="#B8FF00" />
-        <path d="M378 92h35M426 92h30" stroke="#B8FF00" />
-        <path d="M394 95v-22l12 12 13-18 4 27" stroke="#B8FF00" />
-        <path d="M365 255c28 4 61 4 91 0" stroke="#B8FF00" />
+        <path d="M43 426h525" opacity=".4" />
+        <path d="M109 397 139 314 128 155l76 57 83-63 79 66-2 98 50 84" />
+        <path d="M150 304 202 280l42 28-40 27zM285 306l39-27 52 25-45 29z" fill="#B8FF00" stroke="#B8FF00" />
+        <path d="M244 334l36 0m-91 51c24 17 49 17 76 0m-93-2c-37-14-66 5-84 31m193-27c27-24 59-19 84 7 28 29 69 22 85-10" />
+        <path d="M154 211 119 145m169 2 59-56" />
+        <path d="M131 156 89 103m205 14 66-59" opacity=".65" />
+        <path d="M365 171h151l38 121H348z" />
+        <path d="M384 190h119v66H370z" stroke="#B8FF00" />
+        <path d="M389 211h76m-76 15h49m-43-6 11 9 15-22 14 14 15-27" stroke="#B8FF00" />
+        <path d="M392 176h73" stroke="#B8FF00" />
+        <path d="M403 178v-31l16 16 19-26 6 41" stroke="#B8FF00" />
+        <path d="M360 294h184m-136 24h99m-89 13h73" opacity=".65" />
       </g>
-      <text x="383" y="140" fill="#B8FF00" fontFamily="Arial Black, sans-serif" fontSize="28">#1</text>
-      <text x="28" y="459" fill="currentColor" fontFamily="Space Mono, monospace" fontSize="11">STALK / SCAN / STRIKE</text>
+      <text x="398" y="210" fill="#B8FF00" fontFamily="Arial Black, sans-serif" fontSize="29">#1</text>
+      <text x="38" y="469" fill="currentColor" fontFamily="Space Mono, monospace" fontSize="11">STALK / SCAN / STRIKE</text>
     </svg>
   );
 }
